@@ -1,0 +1,243 @@
+.form_div{
+    background-color: #19747c;
+    width: 60%;
+    margin: 5% auto;
+    padding-bottom: 2%;
+    border-radius: 30px;
+    box-shadow: 0 0 1em #1e4b50;
+}
+
+.input_form {
+    margin-top: 5%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.input_form>* {
+    margin: 0 2%;
+}
+
+  .input-field {
+    position: relative;
+    width: 250px;
+    height: 44px;
+    line-height: 44px;
+  }
+  label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    color: white;
+    transition: 0.2s all;
+    cursor: text;
+  }
+  input {
+    background: transparent;
+    width: 100%;
+    border: 0;
+    outline: 0;
+    padding: 0.5rem 0;
+    border-bottom: 2px solid white;
+    box-shadow: none;
+    color: white;
+  }
+  input:invalid {
+    outline: 0;
+    border-color: white;
+  }
+  input:focus,
+  input:valid {
+    border-color: #84e9f2;
+  }
+  input:focus~label,
+  input:valid~label {
+    font-size: 14px;
+    top: -24px;
+    color: #84e9f2;
+  }
+
+
+/*************************Remove Arrow of Input***********************************/
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {-webkit-appearance: none;margin: 0;}
+
+
+
+/************************Button*********************************************************/
+
+  @keyframes button-loading {
+    20% {
+        color: transparent;
+        transform: scale(1, 1);
+   }
+    40% {
+        border-color: #84e9f2;
+        background-color: transparent;
+        transform: scale(1, 1);
+   }
+    60% {
+        transform: scale(0.7, 1.1);
+        margin-left: 1.25rem;
+        width: 2.5rem;
+        text-indent: -0.6125rem;
+        color: transparent;
+        border-color: #84e9f2;
+        background-color: #84e9f2;
+   }
+    80% {
+        transform: scale(1, 1);
+   }
+    100% {
+        margin-left: 1.25rem;
+        width: 2.5rem;
+        background-color: #84e9f2;
+        border-color: #84e9f2;
+        color: transparent;
+   }
+}
+@keyframes button-dot-intro {
+    0% {
+        opacity: 0;
+   }
+    60% {
+        opacity: 1;
+        transform: scale(1, 1);
+   }
+    100% {
+        transform: scale(0.75, 0.75);
+   }
+}
+@keyframes button-dot-pulse {
+    0% {
+        opacity: 1;
+        transform: scale(0.75, 0.75);
+   }
+    15% {
+        transform: scale(0.85, 0.85);
+   }
+    45% {
+        transform: scale(0.75, 0.75);
+   }
+    55% {
+        transform: scale(0.95, 0.95);
+   }
+    85% {
+        transform: scale(0.75, 0.75);
+   }
+    100% {
+        opacity: 1;
+        transform: scale(0.75, 0.75);
+   }
+}
+@keyframes button-ready {
+    0% {
+        margin-left: 1.25rem;
+        width: 2.5rem;
+   }
+    10% {
+        background-color: #84e9f2;
+        border-color: #84e9f2;
+   }
+    70% {
+        margin: 0;
+        width: 7.25rem;
+        background-color: #19747c;
+        transform: scale(1.1, 1.1);
+   }
+    100% {
+        margin: 0;
+        width: 7rem;
+        border-color: #84e9f2;
+        background-color: #19747c;
+   }
+}
+@keyframes button-dot-outro {
+    0% {
+        opacity: 1;
+   }
+    100% {
+        opacity: 0;
+        transform: scale(1, 1);
+   }
+}
+@keyframes button-ready-label {
+    0% {
+        opacity: 0;
+   }
+    100% {
+        opacity: 1;
+   }
+}
+
+button {
+    position: relative;
+    overflow: hidden;
+    width: 7rem;
+    color: #84e9f2;
+    border: 2px solid #84e9f2;
+    background-color: transparent;
+    cursor: pointer;
+    line-height: 2;
+    margin: 0;
+    padding: 0;
+    border-radius: 1.5rem;
+    font-size: 1.125rem;
+    outline: none;
+    transition: transform 0.125s;
+}
+button:active {
+    transform: scale(0.9, 0.9);
+}
+button:before, button:after {
+    position: absolute;
+    opacity: 0;
+    border-radius: 50%;
+    background-color: #19747c;
+    top: 50%;
+    left: 50%;
+    margin-top: -1.125rem;
+    margin-left: -1.125rem;
+    width: 2.25rem;
+    height: 2.25rem;
+    content: '';
+    z-index: 1;
+}
+button.loading {
+    animation: button-loading 0.5s forwards;
+}
+button.loading:before {
+    opacity: 1;
+    animation: button-dot-intro 0.5s forwards;
+}
+button.loading:after {
+    opacity: 0;
+    animation: button-dot-pulse 1.5s infinite 0.5s;
+}
+button.ready {
+    text-indent: 0;
+    color: transparent;
+    background-color: #84e9f2;
+    animation: button-ready 0.333s forwards;
+}
+button.ready:before {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: auto;
+    margin: 0;
+    width: auto;
+    height: auto;
+    border-radius: 0;
+    background-color: transparent;
+    color: #84e9f2;
+    content: 'Result';
+    opacity: 0;
+    z-index: 2;
+    animation: button-ready-label 0.5s forwards 0.275s;
+}
+button.ready:after {
+    opacity: 1;
+    animation: button-dot-outro 0.333s;
+}

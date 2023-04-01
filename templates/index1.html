@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<!--
+Template Name: Trealop
+Author: <a href="https://www.os-templates.com/">OS Templates</a>
+Author URI: https://www.os-templates.com/
+Copyright: OS-Templates.com
+Licence: Free to use under our free template licence terms
+Licence URI: https://www.os-templates.com/template-terms
+-->
+<html lang="en" translate="no">
+<!-- To declare your language - read more here: https://www.w3.org/International/questions/qa-html-language-declarations -->
+<head>
+<title>Diabetes Diagnoses</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link href="../layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+<link rel="stylesheet" href="../layout/styles/symptoms.css">
+<!-- <link rel="stylesheet" href="../layout/styles/diabetes.css"> -->
+<link rel="stylesheet" href="{{url_for('static', filename='style1.css')}}" />
+</head>
+<body id="top">
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row1" style="background-color: #255f64; border-color: #255f64;">
+  <header id="header" class="hoc clear">
+    <div id="logo" class="fl_left">
+      <!-- ################################################################################################ -->
+      <h1><a href="../index.html"><b>AIM</b></a></h1>
+      <!-- ################################################################################################ -->
+    </div>
+    <nav id="mainav" class="fl_right">
+      <!-- ################################################################################################ -->
+      <ul class="clear">
+        <li><a href="../index.html">Home</a></li>
+        <li><a class="drop" href="#">Diagnose</a>
+          <ul>
+            <li><a href="symptoms.html">Symptoms</a></li>
+            <li><a href="reports.html">Reports</a></li>
+            <li><a href="image.html">Image</a></li>
+          </ul>
+        </li>
+        <li><a class="drop" href="#">About</a>
+          <ul>
+            <li><a href="#">Our Team</a></li>
+            <li><a class="active" href="our_model.html">Our Model</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Help</a></li>
+      </ul>
+      <!-- ################################################################################################ -->
+    </nav>
+  </header>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="form_div">
+  <h1 style="text-align: center; padding-top: 5%; color: white; font-weight: bold;">Diabetes Diagnosis</h1>
+  <form action="{{ url_for('uploader')}}" method = 'POST'>
+    <div class="input_form">
+      <div class="input-field">
+        <input type="number" id="pregnancies" min="0" max="20" required />
+        <label for="pregnancies">Number of Pregnancies</label>
+      </div>
+      <div class="input-field">
+        <input type="number" id="glucose" required />
+        <label for="glucose">Glucose Level</label>
+      </div>
+      <div class="input-field">
+        <input type="number" id="pressure" required />
+        <label for="pressure">Blood Pressure Value</label>
+      </div>
+    </div>
+    <div class="input_form">
+      <div class="input-field">
+        <input type="number" id="skin" required />
+        <label for="skin">Skin Thickness Value</label>
+      </div>
+      <div class="input-field">
+        <input type="number" id="insulin" required />
+        <label for="insulin">Insulin Level</label>
+      </div>
+      <div class="input-field">
+        <input type="number" id="bmi" required />
+        <label for="bmi">BMI Value</label>
+      </div>
+    </div>
+    <div class="input_form">
+      <div class="input-field">
+        <input type="number" id="pedigree" required />
+        <label for="pedigree">Diabetes Pedigree Fucntion Value</label>
+      </div>
+      <div class="input-field">
+        <input type="number" id="age" required />
+        <label for="age">Age of the Person</label>
+      </div>
+    </div>
+    <div class="input_form">
+      <button type="submit">Diagnose</button>
+    </div>
+  </form>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row5">
+  <div id="copyright" class="hoc clear">
+    <!-- ################################################################################################ -->
+    <p class="fl_left">Copyright &copy; 2023 - All Rights Reserved - <a href="index.html">AIM</a></p>
+    <p class="fl_right"><a target="_blank" href="https://www.os-templates.com/" title="Free Website Templates">4Bytes</a></p>
+    <!-- ################################################################################################ -->
+  </div>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<a id="backtotop" href="#top"><i class="fas fa-chevron-up"></i></a>
+<!-- JAVASCRIPTS -->
+<!--<script src="../layout/scripts/diabetes_form.js"></script>-->
+<script src="../layout/scripts/symptoms.js"></script>
+<script src="../layout/scripts/jquery.min.js"></script>
+<script src="../layout/scripts/jquery.backtotop.js"></script>
+<script src="../layout/scripts/jquery.mobilemenu.js"></script>
+<script src="{{ url_for('static', filename='js/script.js' ) }}"></script>
+</body>
+</html>
